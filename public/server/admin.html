@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – FES Wiesbaden</title>
+
+  <link rel="stylesheet" href="/server/styles/common.css">
+  <link rel="stylesheet" href="/server/styles/admin.css">
+</head>
+<body>
+
+<header><h1>Admin panel</h1></header>
+
+<!-- password gate -->
+<div id="pwGate" class="modal open">
+  <div class="modal-content">
+    <h2>Admin password</h2>
+    <input id="pwInput" type="password" autofocus>
+    <button id="pwBtn">Login</button>
+  </div>
+</div>
+
+<!-- main area -->
+<div class="container">
+  <select id="dataset">
+    <option value="comments">Kommentare</option>
+    <option value="images">Bilder</option>
+    <option value="teacher_reviews">Lehrer‑Reviews</option>
+  </select>
+  <button id="refresh">🔄 Refresh</button>
+
+  <table id="dataTable"></table>
+</div>
+
+<!-- edit modal (hidden by default) -->
+<div id="editModal" class="modal">
+  <div class="modal-content edit">
+    <h2>Eintrag bearbeiten</h2>
+    <form id="editForm"><!-- fields injected via JS --></form>
+
+    <div class="actions">
+      <button id="saveBtn">💾 Speichern</button>
+      <button id="cancelBtn" type="button">✖ Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<div id="loader" class="loader"></div>
+
+<script type="module" src="/server/scripts/common.js"></script>
+<script type="module" src="/server/scripts/admin.js"></script>
+</body>
+</html>

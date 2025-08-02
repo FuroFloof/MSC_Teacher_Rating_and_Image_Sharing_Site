@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bilder hochladen – FES Wiesbaden</title>
+
+  <!-- shared + page‑specific styles -->
+  <link rel="stylesheet" href="/server/styles/common.css">
+  <link rel="stylesheet" href="/server/styles/board.css">
+</head>
+<body>
+
+<header><h1>FES Wiesbaden</h1></header>
+
+<!-- main content -->
+<div class="container">
+  <div class="search-bar">
+    <input type="text" id="image-search" placeholder="Bildname suchen...">
+    <button id="search-button">Suchen</button>
+  </div>
+
+  <div id="image-gallery" class="image-gallery"><!-- images injected here --></div>
+</div>
+
+<!-- plus‑button + upload modal -->
+<div class="plus-button" id="plus-button">+</div>
+
+<div id="upload-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="modal-close">&times;</span>
+    <h2>Bild hochladen</h2>
+    <p>Bilder werden auf 512×512 verkleinert, da man euch Deppen nicht trauen kann.</p>
+
+    <div class="form-group">
+      <label for="image-name">Bildname:</label>
+      <input type="text" id="image-name" maxlength="50" style="width:100%;padding:10px;">
+    </div>
+    <div class="form-group">
+      <label for="image-file">Bilddatei:</label>
+      <input type="file" id="image-file" accept="image/*,.gif">
+    </div>
+    <button id="upload-button">Hochladen</button>
+  </div>
+</div>
+
+<!-- footer + nav -->
+<footer>
+  <a href="/impressum">Impressum</a> | <a href="/faq">FAQ</a>
+</footer>
+
+<div class="fixed-footer">
+  <a href="/">Home</a>
+  <a href="/review">Lehrer Review</a>
+  <a href="/comment">Kommentieren</a>
+  <a href="/board">Bilder</a>
+</div>
+
+<!-- loader spinner -->
+<div id="loader" class="loader"></div>
+
+<!-- scripts -->
+<script type="module"  defer src="/server/scripts/common.js"></script>
+<script type="module"  defer src="/server/scripts/board.js"></script>
+</body>
+</html>

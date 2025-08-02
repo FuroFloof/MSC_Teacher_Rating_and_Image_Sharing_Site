@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kommentare – FES Wiesbaden</title>
+
+  <link rel="stylesheet" href="/server/styles/common.css">
+  <link rel="stylesheet" href="/server/styles/comment.css">
+</head>
+<body>
+
+<header><h1>FES Wiesbaden</h1></header>
+
+<div class="container">
+  <div class="comment-feed">
+    <div class="search-bar">
+      <input type="text" id="author-search" placeholder="Nach Autor Filtern...">
+      
+
+      <div class="sort-options">
+        <label for="sort-select">Sortieren nach:</label>
+        <select id="sort-select">
+          <option value="date_desc">Neueste zuerst</option>
+          <option value="date_asc">Älteste zuerst</option>
+        </select>
+      </div>
+
+      <button id="search-button">Suchen</button>
+
+    </div>
+
+    <div id="comment-list"><!-- comments injected here --></div>
+  </div>
+</div>
+
+<div class="plus-button" id="plus-button">+</div>
+
+<!-- write‑comment modal -->
+<div id="comment-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="modal-close">&times;</span>
+    <h2>Kommentar schreiben</h2>
+
+    <div class="form-group">
+      <div class="toggle-anonymous">
+        <input type="checkbox" id="anonymous-toggle" checked>
+        <label for="anonymous-toggle">Anonymer Kommentar</label>
+      </div>
+    </div>
+
+    <div class="form-group" id="username-group" style="display:none;">
+      <label for="username-input">Benutzername:</label>
+      <input type="text" id="username-input" maxlength="50" style="width:100%;padding:10px;">
+    </div>
+
+    <div class="form-group">
+      <label for="comment-message">Nachricht (max 200 Zeichen):</label>
+      <textarea id="comment-message" maxlength="200" rows="6" style="width:100%;padding:10px;"></textarea>
+    </div>
+
+    <button id="submit-comment">Absenden</button>
+  </div>
+</div>
+
+<footer>
+  <a href="/impressum">Impressum</a> | <a href="/faq">FAQ</a>
+</footer>
+
+<div class="fixed-footer">
+  <a href="/">Home</a>
+  <a href="/review">Lehrer Review</a>
+  <a href="/comment">Kommentieren</a>
+  <a href="/board">Bilder</a>
+</div>
+
+<div id="loader" class="loader"></div>
+
+<script type="module"  defer src="/server/scripts/common.js"></script>
+<script type="module"  defer src="/server/scripts/comment.js"></script>
+</body>
+</html>

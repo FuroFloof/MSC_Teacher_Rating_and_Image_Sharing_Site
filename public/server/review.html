@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bewertungen – FES Wiesbaden</title>
+
+  <link rel="stylesheet" href="/server/styles/common.css">
+  <link rel="stylesheet" href="/server/styles/review.css">
+</head>
+<body>
+
+<header><h1>FES Wiesbaden</h1></header>
+
+<div class="container">
+  <div class="review-feed">
+    <div class="search-bar">
+      <input type="text" id="teacher-search" placeholder="Nach Lehrer Filtern...">
+      
+
+      <div class="sort-options">
+        <label for="sort-select">Sortieren nach:</label>
+        <select id="sort-select">
+          <option value="date_desc">Neueste zuerst</option>
+          <option value="date_asc">Älteste zuerst</option>
+          <option value="score_desc">Beste Bewertung</option>
+          <option value="score_asc">Schlechteste Bewertung</option>
+        </select>
+      </div>
+
+      <button id="search-button">Suchen</button>
+
+    </div>    
+
+    <div id="review-list"><!-- reviews injected here --></div>
+  </div>
+
+  <div class="plus-button" id="plus-button">+</div>
+</div>
+
+<!-- write‑review modal -->
+<div id="review-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="modal-close">&times;</span>
+    <h2>Bewertung schreiben</h2>
+
+    <div class="form-group">
+      <label for="teacher-selector">Lehrer auswählen:</label>
+      <input type="text" id="teacher-selector" placeholder="Lehrername eingeben...">
+      <div id="teacher-list" style="max-height:150px;overflow-y:auto;border:1px solid #ccc;margin-top:5px;"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Bewertung:</label>
+      <div class="star-rating" id="star-rating">
+        <span class="star" data-value="1">&#9734;</span>
+        <span class="star" data-value="2">&#9734;</span>
+        <span class="star" data-value="3">&#9734;</span>
+        <span class="star" data-value="4">&#9734;</span>
+        <span class="star" data-value="5">&#9734;</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="review-message">Nachricht (max 100 Zeichen):</label>
+      <textarea id="review-message" maxlength="100" rows="4" style="width:100%;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="toggle-anonymous">
+        <input type="checkbox" id="anonymous-toggle" checked>
+        <h3>Anonyme Bewertung</h3>
+      </div>
+    </div>
+
+    <div class="form-group" id="username-group" style="display:none;">
+      <label for="username-input">Benutzername:</label>
+      <input type="text" id="username-input" maxlength="50" style="width:100%;">
+    </div>
+
+    <button id="submit-review">Absenden</button>
+  </div>
+</div>
+
+<footer>
+  <a href="/impressum">Impressum</a> | <a href="/faq">FAQ</a>
+</footer>
+
+<div class="fixed-footer">
+  <a href="/">Home</a>
+  <a href="/review">Lehrer Review</a>
+  <a href="/comment">Kommentieren</a>
+  <a href="/board">Bilder</a>
+</div>
+
+<div id="loader" class="loader"></div>
+
+<script type="module"  defer src="/server/scripts/common.js"></script>
+<script type="module"  defer src="/server/scripts/review.js"></script>
+</body>
+</html>

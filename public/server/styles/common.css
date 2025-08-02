@@ -1,0 +1,29 @@
+
+/* shared look & feel */
+body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#333;padding-bottom:70px}
+header,footer{background:#2c3e50;color:#fff;text-align:center;padding:20px}
+header h1{margin:0}
+footer a{color:#fff;margin:0 10px;text-decoration:none}
+.fixed-footer{position:fixed;bottom:0;width:100%;background:#2c3e50;display:flex;justify-content:space-around;padding:10px 0}
+.fixed-footer a{color:#fff;text-decoration:none;font-size:2em;flex:1;text-align:center;border:1px solid #fff;margin:0 5px;padding:10px 0;border-radius:5px}
+
+/* loader spinner */
+.loader{display:none;margin:20px auto;border:8px solid #f3f3f3;border-top:8px solid #2980b9;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+/* ——— mobile fix for footer nav ——— */
+@media (max-width:600px){
+    /* slightly slimmer bar */
+    .fixed-footer{padding:6px 0}
+  
+    /* make anchors fit without overflow */
+    .fixed-footer a{
+      flex:1 1 25%;          /* four buttons share the row */
+      min-width:0;           /* allow them to shrink below content width */
+      margin:0 2px;          /* tighter gap */
+      padding:8px 0;
+      font-size: .8em;       /* was 2 em: smaller so text never wraps */
+      box-sizing:border-box; /* borders counted inside width */
+    }
+  }
+  

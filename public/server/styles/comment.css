@@ -1,0 +1,61 @@
+/* ─── desktop / default ─────────────────────────────────────────── */
+.container{padding:20px}
+.comment-feed{margin-bottom:20px}
+
+.search-bar{display:flex;margin-bottom:20px}
+.search-bar input[type=text]{flex:1;padding:10px;font-size:1em}
+.search-bar button{padding:10px 20px;font-size:1em;background:#2980b9;color:#fff;border:none;cursor:pointer}
+
+.sort-options{margin-left:20px}
+.sort-options select{padding:10px;font-size:1em}
+
+.comment-card{background:#ecf0f1;border-radius:5px;padding:20px;margin-bottom:10px}
+
+.plus-button{
+  position:fixed;right:80px;bottom:80px;
+  width:150px;height:150px;border-radius:50%;
+  background:#e74c3c6e;color:#fff;font-size:7em;
+  text-align:center;line-height:150px;cursor:pointer
+}
+
+/* modal */
+.modal{display:none;position:fixed;z-index:1001;left:0;top:0;width:100%;height:100%;overflow:auto;background:rgba(0,0,0,.5)}
+.modal-content{background:#fff;margin:10% auto;padding:20px;border-radius:5px;width:90%;max-width:500px;position:relative}
+.close-button{position:absolute;right:15px;top:15px;font-size:1.5em;cursor:pointer}
+
+.form-group{margin-bottom:15px}
+.form-group label{display:block;margin-bottom:5px}
+.toggle-anonymous{display:flex;align-items:center}
+.toggle-anonymous input{margin-right:10px}
+
+/* ─── mobile (≤ 600 px) ────────────────────────────────────────── */
+@media (max-width:600px){
+  /* layout & padding */
+  .container{padding:12px}
+  .search-bar{flex-direction:column;gap:6px}
+  .sort-options{margin-left:0}
+
+  /* full‑width form controls */
+  .search-bar input[type=text],
+  .search-bar button,
+  .sort-options select{width:100%;box-sizing:border-box}
+
+  .comment-card{padding:14px;font-size:.95em}
+
+  /* smaller floating “+” button */
+  .plus-button{
+    width:64px;height:64px;font-size:3.2em;line-height:64px;
+    right:16px;bottom:45px
+  }
+
+  /* modal adapts to screen */
+  .modal-content{
+    width:90%;margin:15% auto;padding:16px;
+    max-height:80vh;overflow-y:auto
+  }
+  .close-button{font-size:1.6em}
+
+  /* text inputs span full width */
+  .form-group input,
+  .form-group textarea{width:8%}
+}

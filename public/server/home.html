@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Die wahre FES‑Wiesbaden Seite</title>
+
+  <link rel="stylesheet" href="/server/styles/common.css">
+  <link rel="stylesheet" href="/server/styles/home.css">
+</head>
+<body>
+
+<!-- disclaimer modal -->
+<div id="disclaimer-modal">
+  <div id="modal-content">
+    <p>Diese Webseite ist eine Parodie.<br>
+       Jegliche Daten stammen aus öffentlichen Datensätzen.<br>
+       Ich trage keinerlei Haftung für den Inhalt der hier verbreitet wird.<br>
+       Nichts in dieser Seite wird moderiert.<br>
+       Ich werde keinen Content löschen, es sei denn er verstößt gegen das deutsche Mediengesetz.</p>
+    <label>
+      <input type="checkbox" id="accept-checkbox"> Einverstanden
+    </label><br>
+    <button id="continue-button" disabled>Weiter</button>
+  </div>
+</div>
+
+<header><h1>FES Wiesbaden</h1></header>
+
+<div class="title">Bilder von unseren Schülern!</div>
+<div class="sub-title">Bilder werden nicht moderiert!!</div>
+
+<!-- image carousel -->
+<div class="carousel" id="image-carousel"></div>
+
+<div class="title">Die wahre FES‑Wiesbaden Seite!</div>
+
+<img src="https://fes-wiesbaden.de/wp-content/uploads/2024/09/Friedrich-Ebert-Kopf.jpg"
+     alt="Background Image" class="full-width-image">
+
+<div class="text-field">
+  Diese Website wird von Schülern der Friedrich‑Ebert‑Schule geleitet, betreten auf eigene Gefahr!
+</div>
+
+<div class="separator"></div>
+<div class="title">Besten und schlechtesten Habibis</div>
+<div class="teacher-carousel" id="teacher-carousel"></div>
+
+<div class="separator"></div>
+<div class="title">Lehrer Reviews von euch Allmanns</div>
+<div class="review-carousel" id="review-carousel"></div>
+
+<div class="separator"></div>
+<div class="title">Allgemeine Schul Bewertungen</div>
+<div class="general-review-carousel" id="general-review-carousel"></div>
+
+<div class="separator"></div>
+
+<div class="text-field">
+  Alle Bewertungen wurden (nicht) verifiziert. UwU<br>
+  Der Website Betreiber nimmt keine Haftung für dummen Content.
+  <div id="counter">
+    Diese Website wurde <span id="visitor-count">0</span> mal besucht!
+  </div>
+</div>
+
+<footer>
+  <a href="/impressum">Impressum</a> | <a href="/faq">FAQ</a>
+</footer>
+
+<div class="fixed-footer">
+  <a href="/">Home</a>
+  <a href="/review">Lehrer Review</a>
+  <a href="/comment">Kommentieren</a>
+  <a href="/board">Bilder</a>
+</div>
+
+<div id="loader" class="loader"></div>
+
+<script type="module"  defer src="/server/scripts/common.js"></script>
+<script type="module"  defer src="/server/scripts/home.js"></script>
+</body>
+</html>
